@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+.create-post,
+.post {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-post h2,
+.posts h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button,
+.edit-button,
+.back-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.post {
+    margin-bottom: 20px;
+}
+
+.post h3 {
+    margin-top: 0;
+    font-size: 25px;
+}
+
+.post-info {
+    color: #777;
+    font-size: 14px;
+}
+
+.content {
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.buttons form {
+    display: inline;
+}
+
+.edit-button {
+    background-color: #ddd;
+    color: #333;
+}
+
+.delete-button {
+    background-color: #b33;
+    color: white;
+    margin-top: 0;
+}
+
+.back-button {
+    background-color: #ddd;
+    color: #333;
+}
+
+.no-posts {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+
+    main {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .create-post,
+    .post {
+        padding: 18px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .edit-button,
+    .delete-button {
+        width: 100%;
+        text-align: center;
+    }
+}

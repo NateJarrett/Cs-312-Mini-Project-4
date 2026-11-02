@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <h1>My Blog</h1>
+      <p>Share your thoughts with the world.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="create-section">
+      <h2>Create a New Post</h2>
+
+      <form action="/posts" method="POST">
+
+        <label for="author">Your Name</label>
+        <input
+          type="text"
+          id="author"
+          name="author"
+          placeholder="Enter your name"
+          required
+        >
+
+        <label for="title">Blog Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Enter your blog title"
+          required
+        >
+
+        <label for="content">Blog Content</label>
+        <textarea
+          id="content"
+          name="content"
+          rows="8"
+          placeholder="Write your blog post..."
+          required
+        ></textarea>
+
+        <button type="submit">Publish Post</button>
+
+      </form>
+    </section>
+
+    <section class="posts-section">
+      <h2>Blog Posts</h2>
+
+      <% if (posts.length === 0) { %>
+
+        <div class="empty-message">
+          <p>No posts yet. Be the first to create one!</p>
+        </div>
+
+      <% } else { %>
+
+        <% posts.slice().reverse().forEach(post => { %>
+
+          <article class="post-card">
+
+            <h3><%= post.title %></h3>
+
+            <div class="post-meta">
+              By <strong><%= post.author %></strong>
+              |
+              <%= post.createdAt.toLocaleString() %>
+            </div>
+
+            <p class="post-content">
+              <%= post.content %>
+            </p>
+
+            <div class="post-actions">
+
+              <a
+                href="/posts/<%= post.id %>/edit"
+                class="button edit-button"
+              >
+                Edit
+              </a>
+
+              <form
+                action="/posts/<%= post.id %>/delete"
+                method="POST"
+                class="delete-form"
+              >
+                <button
+                  type="submit"
+                  class="button delete-button"
+                >
+                  Delete
+                </button>
+              </form>
+
+            </div>
+
+          </article>
+
+        <% }) %>
+
+      <% } %>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>CS-312 Mini Project 1</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+.post-form-card {
+  background: white;
+  padding: 22px;
+  margin: 0 auto 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.post-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+textarea {
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.form-buttons,
+.post-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.delete-button {
+  background: #b83232;
+}
+
+.delete-button:hover {
+  background: #8f2020;
+}
+
+.cancel-button {
+  background: #666;
+}
+
+.cancel-button:hover {
+  background: #444;
+}
+
+.post-actions {
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+}
